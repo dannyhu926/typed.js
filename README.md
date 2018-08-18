@@ -45,33 +45,7 @@ var options = {
 var typed = new Typed(".element", options);
 ~~~
 
-Wonderful sites that have used (or are using) Typed.js
----
-https://slack.com/
 
-https://envato.com/
-
-https://gorails.com/
-
-https://productmap.co/
-
-https://www.typed.com/
-
-https://apeiron.io
-
-https://git.market/
-
-https://commando.io/
-
-http://testdouble.com/agency.html
-
-https://www.capitalfactory.com/
-
-http://www.maxcdn.com/
-
-https://www.powerauth.com/
-
----
 
 ### Strings from static HTML (SEO Friendly)
 Rather than using the `strings` array to insert strings, you can place an HTML `div` on the page and read from it.
@@ -156,157 +130,11 @@ var typed = new Typed(".element", {
    * @property {string} stringsElement ID of element containing string children
    */
   strings: ['These are the default values...', 'You know what you should do?', 'Use your own!', 'Have a great day!'],
-  stringsElement: null,
-
-  /**
-   * @property {number} typeSpeed type speed in milliseconds
-   */
-  typeSpeed: 0,
-
-  /**
-   * @property {number} startDelay time before typing starts in milliseconds
-   */
-  startDelay: 0,
-
-  /**
-   * @property {number} backSpeed backspacing speed in milliseconds
-   */
-  backSpeed: 0,
-
-  /**
-   * @property {boolean} smartBackspace only backspace what doesn't match the previous string
-   */
-  smartBackspace: true,
-
-  /**
-   * @property {boolean} shuffle shuffle the strings
-   */
-  shuffle: false,
-
-  /**
-   * @property {number} backDelay time before backspacing in milliseconds
-   */
-  backDelay: 700,
-
-  /**
-   * @property {boolean} fadeOut Fade out instead of backspace
-   * @property {string} fadeOutClass css class for fade animation
-   * @property {boolean} fadeOutDelay Fade out delay in milliseconds
-   */
-  fadeOut: false,
-  fadeOutClass: 'typed-fade-out',
-  fadeOutDelay: 500,
-
-  /**
-   * @property {boolean} loop loop strings
-   * @property {number} loopCount amount of loops
-   */
-  loop: false,
-  loopCount: Infinity,
-
-  /**
-   * @property {boolean} showCursor show cursor
-   * @property {string} cursorChar character for cursor
-   * @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
-   */
-  showCursor: true,
-  cursorChar: '|',
-  autoInsertCss: true,
-
-  /**
-   * @property {string} attr attribute for typing
-   * Ex: input placeholder, value, or just HTML text
-   */
-  attr: null,
-
-  /**
-   * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
-   */
-  bindInputFocusEvents: false,
-
-  /**
-   * @property {string} contentType 'html' or 'null' for plaintext
-   */
-  contentType: 'html',
-
-  /**
-   * All typing is complete
-   * @param {Typed} self
-   */
-  onComplete: (self) => {},
-
-  /**
-   * Before each string is typed
-   * @param {number} arrayPos
-   * @param {Typed} self
-   */
-  preStringTyped: (arrayPos, self) => {},
-
-  /**
-   * After each string is typed
-   * @param {number} arrayPos
-   * @param {Typed} self
-   */
-  onStringTyped: (arrayPos, self) => {},
-
-  /**
-   * During looping, after last string is typed
-   * @param {Typed} self
-   */
-  onLastStringBackspaced: (self) => {},
-
-  /**
-   * Typing has been stopped
-   * @param {number} arrayPos
-   * @param {Typed} self
-   */
-  onTypingPaused: (arrayPos, self) => {},
-
-  /**
-   * Typing has been started after being stopped
-   * @param {number} arrayPos
-   * @param {Typed} self
-   */
-  onTypingResumed: (arrayPos, self) => {},
-
-  /**
-   * After reset
-   * @param {Typed} self
-   */
-  onReset: (self) => {},
-
-  /**
-   * After stop
-   * @param {number} arrayPos
-   * @param {Typed} self
-   */
-  onStop: (arrayPos, self) => {},
-
-  /**
-   * After start
-   * @param {number} arrayPos
-   * @param {Typed} self
-   */
-  onStart: (arrayPos, self) => {},
-
-  /**
-   * After destroy
-   * @param {Typed} self
-   */
-  onDestroy: (self) => {}
+  onStringTyped: function(index, self) { console.log(self.el.innerHTML); }
 });
+
+function next(typed) {
+	typed.strings =['aaa','bbb']; //ajax get data
+}
 ~~~
 
-
-## Contributing
-
-### [View Contribution Guidelines](./.github/CONTRIBUTING.md)
-
-end
----
-
-Thanks for checking this out. If you have any questions, I'll be on [Twitter](http://www.twitter.com/atmattb).
-
-If you're using this, let me know! I'd love to see it.
-
-It would also be great if you mentioned me or my website somewhere. [www.mattboldt.com](http://www.mattboldt.com)
