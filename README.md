@@ -134,7 +134,8 @@ var typed = new Typed(".element", {
 });
 
 function next(typed) {
-	typed.strings =['aaa','bbb']; //ajax get data
+  typed.strings =['aaa','bbb']; //ajax get data
+  typed.reset();
 }
 ~~~
 
