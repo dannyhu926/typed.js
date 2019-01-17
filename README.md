@@ -138,6 +138,9 @@ function next(typed) {
   typed.reset();
 }
 ~~~
+html标签支持打字暂停，点击后继续打字
+<img typejs="pause" onclick="typing.resume()" src="/upload/image/20181119/20181119163818_91823.png" />
+
 var typing = new Typing({
 source: document.getElementById('type_source'),
 output: document.getElementById('type_output'),
