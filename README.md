@@ -138,4 +138,24 @@ function next(typed) {
   typed.reset();
 }
 ~~~
+var typing = new Typing({
+source: document.getElementById('type_source'),
+output: document.getElementById('type_output'),
+delay: 120,
+scrollTop: function () {
+    $$(".page-content").scrollTop($$(".page-content").height() + 99999);
+},
+done: function() {
+    $("#answerForm").fadeIn(3000);
+} //完成打印后的回调事件
+});
+typing.start();
+
+$$('.page-content').on('touchmove', function (event) {
+	typing.pause();
+});
+
+$$('.page-content').on('click', function (event) {
+	typing.resume();
+});
 
